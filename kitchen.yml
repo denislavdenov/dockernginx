@@ -1,0 +1,27 @@
+---
+driver:
+  name: docker
+  provision_command: mkdir -p /run/sshd
+
+provisioner:
+  name: chef_solo
+
+verifier:
+  name: inspec
+  systems:
+    - name: default
+      backend: ssh
+      key_files:
+        - ~/.ssh/id_rsa
+      controls:
+        - check_pkg
+
+platforms:
+  - name: ubuntu
+    driver_config:
+      image: denislavd/nginx:0.0.1
+
+suites:
+  - name: default
+    run_list:
+    attributes:
