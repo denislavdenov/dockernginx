@@ -2,7 +2,13 @@
 
 1. Fork the repo
 2. install Vagrant
-3. vagrant up (yours or mine Vbox)
-4. vagrant ssh and navigate to /vagrant shared folder
-5. docker login (login with your credentials)
-6. sudo packer build dockernginx.json (after you have edited the information for your docker repo in the json file)
+3. `vagrant up`
+4. `vagrant ssh`
+5. `docker login` (submit login/pass )
+6. `cd /vagrant`
+7. edit dockernginx.json file to fit your credentials
+8. `sudo packer build dockernginx.json`
+
+## TODO
+
+Update dockernginx.json to use variables
