@@ -13,5 +13,4 @@ end
 describe nginx do
   its('openssl_version.date') { should_not eq '11 Feb 2013' }
   its('modules') { should include 'http_ssl' }
-  its('compiler_info.compiler') { should_not eq 'gcc' }
 end
