@@ -9,6 +9,19 @@
 7. edit dockernginx.json file to fit your credentials
 8. `sudo packer build dockernginx.json`
 
-## TODO
+# Test docker container
 
-Update dockernginx.json to use variables
+### Prerequisites - run below commands in order to set up the environment needed for the testing part
+- **Install kitchen and dependencies**
+  -  brew install rbenv
+  -  rbenv install 2.3.1
+  -  install chefdk 2.5.3-1 version
+  -  gem install inspec
+  -  gem install kitchen-test
+  -  gem install kitchen-docker
+  -  gem install bundler
+  -  kitchen init --driver=docker --crete-gemfile
+  -  bundle install
+  
+### Start your test:
+`kitchen test` or `bundle exec kitchen-test`
